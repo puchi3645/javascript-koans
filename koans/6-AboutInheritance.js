@@ -3,8 +3,8 @@ function Muppet(age, hobby) {
   this.hobby = hobby;
 
   this.answerNanny = function(){
-	return "Everything's cool!";
-  }
+    return "Everything's cool!";
+  };
 }
 
 function SwedishChef(age, hobby, mood) {
@@ -13,7 +13,7 @@ function SwedishChef(age, hobby, mood) {
 
   this.cook = function() {
     return "Mmmm soup!";
-  }
+  };
 }
 
 SwedishChef.prototype = new Muppet();
@@ -21,7 +21,7 @@ SwedishChef.prototype = new Muppet();
 describe("6. About inheritance", function() {
   beforeEach(function(){
     this.muppet = new Muppet(2, "coding");
-	this.swedishChef = new SwedishChef(2, "cooking", "chillin");
+    this.swedishChef = new SwedishChef(2, "cooking", "chillin");
   });
 
   it("should be able to call a method on the derived object", function() {
