@@ -80,6 +80,14 @@ describe("2. About Functions", function() {
     expect(returnAllArgs("first", "second", "third")).toBe(FILL_ME_IN);
   });
 
+  it("should return undefined if no return value is specified", function () {
+    function returnsUndefined() {
+
+    }
+
+    expect(returnsUndefined()).toBe(FILL_ME_IN);
+  });
+
   it("should pass functions as values", function () {
 
     var appendRules = function (name) {
@@ -98,7 +106,7 @@ describe("2. About Functions", function() {
 
   });
 
-  it("can use a functions that return a functions", function(){
+  it("can use a function that returns a function", function(){
     var myFunc = function (){
       var count = 0;
       return function () {
@@ -106,11 +114,11 @@ describe("2. About Functions", function() {
       };
     };
 
-    expect(typeof(myFunc())).toEqual(FILL_ME_IN);
     expect(myFunc()()).toEqual(FILL_ME_IN);
+    expect( typeof myFunc() ).toEqual(FILL_ME_IN);
   });
 
-  it("can use a functions and closures", function(){
+  it("can use functions and closures", function(){
     var myFunc = function (){
       var count = 0;
       return function () {

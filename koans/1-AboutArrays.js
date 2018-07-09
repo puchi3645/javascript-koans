@@ -37,9 +37,11 @@ describe("1. About Arrays", function() {
 
     var tenEmptyElementArray = new Array(10);
     expect(tenEmptyElementArray.length).toBe(FILL_ME_IN);
+    expect(tenEmptyElementArray).toEqual([undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined]);
 
     tenEmptyElementArray.length = 5;
     expect(tenEmptyElementArray.length).toBe(FILL_ME_IN);
+    expect(tenEmptyElementArray).toEqual(FILL_ME_IN);
   });
 
   it("should slice arrays", function () {
@@ -54,6 +56,9 @@ describe("1. About Arrays", function() {
     expect(array.slice(5, 1)).toEqual(FILL_ME_IN);
   });
 
+  // For more information: https://www.youtube.com/watch?v=YnfwDQ5XYF4
+  // Note that the video uses `let` and `const`.
+  // For now, just think of those as doing the same job as `var`
   it("should know array references", function () {
     var array = [ "zero", "one", "two", "three", "four", "five" ];
 
@@ -95,12 +100,17 @@ describe("1. About Arrays", function() {
   });
 
   it("should write a function that returns an array of the first two elements of that array", function () {
+    // be sure the function does not modify the original array
     var firstTwoElements = function(array) {
       return FILL_ME_IN;
     };
+    var firstArray = [1,2,3];
+    var secondArray = [7,6,5];
 
-    expect(firstTwoElements([1,2,3])).toEqual([1,2]);
-    expect(firstTwoElements([7,6,5])).toEqual([7,6]);
+    expect(firstTwoElements(firstArray)).toEqual([1,2]);
+    expect(firstArray).toEqual([1,2,3]);
+    expect(firstTwoElements(secondArray)).toEqual([7,6]);
+    expect(secondArray).toEqual([7,6,5])
   });
 
 
