@@ -37,7 +37,7 @@ describe("7. About Applying What We Have Learnt", function() {
 
     var productsICanEat = [];
 
-    /* solve using filter() & all() / any() */
+    /* solve using filter() & some() / every() */
 
     expect(productsICanEat.length).toBe(FILL_ME_IN);
   });
