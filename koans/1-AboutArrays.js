@@ -110,7 +110,7 @@ describe("1. About Arrays", function() {
     expect(firstTwoElements(firstArray)).toEqual([1,2]);
     expect(firstArray).toEqual([1,2,3]);
     expect(firstTwoElements(secondArray)).toEqual([7,6]);
-    expect(secondArray).toEqual([7,6,5])
+    expect(secondArray).toEqual([7,6,5]);
   });
 
 
@@ -124,7 +124,10 @@ describe("1. About Arrays", function() {
   });
 
   it("should write a function that creates a new array of a certain length", function () {
-    //makeArray should return an array; The length of that array is determined by the second parameter; the elements of that array should be the first parameter 
+    //makeArray should return an array;
+    //The length of that array is determined by the second parameter;
+    //The elements of that array should be the first parameter
+    //This could be done using a for loop or the fill array function
     var makeArray = function(element, length) {
       return FILL_ME_IN;
     };
