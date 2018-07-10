@@ -64,5 +64,4 @@ describe("4. About Mutability", function() {
 
     expect(aPerson.getFullName()).toBe(FILL_ME_IN);
   });
-
 });
