@@ -66,5 +66,4 @@ describe('0. About Expects', function() {
     expect(myExpectation).not.toBe(false);
     expect(myExpectation).toBeFalsy();
   });
-
 });

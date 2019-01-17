@@ -39,7 +39,6 @@ describe("2. About Functions", function() {
   });
 
   it("should use lexical scoping to synthesise functions", function () {
-
     function makeMysteryFunction(makerValue)
     {
       var newFunction = function doMysteriousThing(param)
@@ -56,7 +55,6 @@ describe("2. About Functions", function() {
   });
 
   it("should allow extra function arguments", function () {
-
     function returnFirstArg(firstArg) {
       return firstArg;
     }
@@ -89,7 +87,6 @@ describe("2. About Functions", function() {
   });
 
   it("should pass functions as values", function () {
-
     var appendRules = function (name) {
       return name + " rules!";
     };
@@ -103,7 +100,6 @@ describe("2. About Functions", function() {
 
     praiseSinger.givePraise = appendDoubleRules;
     expect(praiseSinger.givePraise("Mary")).toBe(FILL_ME_IN);
-
   });
 
   it("can use a function that returns a function", function(){
@@ -131,5 +127,4 @@ describe("2. About Functions", function() {
     expect(closure()).toEqual(FILL_ME_IN);
     expect(closure()).toEqual(FILL_ME_IN);
   });
-
 });
