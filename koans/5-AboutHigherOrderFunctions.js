@@ -1,6 +1,6 @@
-describe("5. About Higher Order Functions", function () {
+describe("5. About Higher Order Functions", () => {
 
-  it("should use filter to return array items that meet a criteria", function () {
+  it("should use filter to return array items that meet a criteria", () => {
     const numbers = [1,2,3];
     const odd = numbers.filter(function (x) { return x % 2 !== 0 });
 
@@ -9,7 +9,7 @@ describe("5. About Higher Order Functions", function () {
     expect(numbers.length).toBe(FILL_ME_IN);
   });
 
-  it("should use 'map' to transform each element", function () {
+  it("should use 'map' to transform each element", () => {
     const numbers = [1, 2, 3];
     const numbersPlus1 = numbers.map(function(x) { return x + 1 });
 
@@ -17,7 +17,7 @@ describe("5. About Higher Order Functions", function () {
     expect(numbers).toEqual(FILL_ME_IN);
   });
 
-  it("should use 'forEach' for simple iteration", function () {
+  it("should use 'forEach' for simple iteration", () => {
     const numbers = [1,2,3];
     let msg = "";
     const isEven = function (item) {
@@ -30,7 +30,7 @@ describe("5. About Higher Order Functions", function () {
     expect(numbers).toEqual(FILL_ME_IN);
   });
 
-  it("should use 'all' to test whether all items pass condition", function () {
+  it("should use 'all' to test whether all items pass condition", () => {
     const onlyEven = [2,4,6];
     const mixedBag = [2,4,5,6];
 
@@ -40,7 +40,7 @@ describe("5. About Higher Order Functions", function () {
     expect(mixedBag.every(isEven)).toBe(FILL_ME_IN);
   });
 
-  it("should use 'any' to test if any items passes condition" , function () {
+  it("should use 'any' to test if any items passes condition" , () => {
     const onlyEven = [2,4,6];
     const mixedBag = [2,4,5,6];
 
@@ -50,7 +50,7 @@ describe("5. About Higher Order Functions", function () {
     expect(mixedBag.some(isEven)).toBe(FILL_ME_IN);
   });
 
-  it("should write a function to filter out objects that match a criteria", function () {
+  it("should write a function to filter out objects that match a criteria", () => {
     // return a filer people over 40
     const people = [{name: "bob", age: 41}, {name: "jane", age: 22},{name: "janet", age: 47},{name: "louis", age: 35}];
     const peopleOverFourty = people.filter(function (x) {
@@ -60,7 +60,7 @@ describe("5. About Higher Order Functions", function () {
     expect(peopleOverFourty).toEqual([{name: "bob", age: 41}, {name: "janet", age: 47}]);
   });
 
-  it("should write a function to transform elements in an array into a new array", function () {
+  it("should write a function to transform elements in an array into a new array", () => {
     // return a list of everyone's age
     const people = [{name: "bob", age: 41}, {name: "jane", age: 22},{name: "janet", age: 47},{name: "louis", age: 35}];
     const names = people.map(function(x) {
@@ -70,14 +70,14 @@ describe("5. About Higher Order Functions", function () {
     expect(names).toEqual([41, 22, 47, 35]);
   });
 
-  it("should write a function that finds the difference between two arrays", function () {
+  it("should write a function that finds the difference between two arrays", () => {
     // implement a difference function for lists, which subtracts one list from another.
     // It should remove all values from list a, which are present in list b.
     // arrayDiff([1,2],[1]) == [2]
     // arrayDiff([1,2,2,2,3],[2]) == [1,3]
 
     const arrayDiff = function(array1, array2) {
-      return array1.filter(function(){
+      return array1.filter(() =>{
         return FILL_ME_IN;
       });
     };
@@ -86,7 +86,7 @@ describe("5. About Higher Order Functions", function () {
     expect(arrayDiff([1,2,2,2,3], [2])).toEqual([1,3]);
   });
 
-  it("should write a function to capitalize every word in a string", function(){
+  it("should write a function to capitalize every word in a string", () =>{
     // Hint:
     // First split the string into a list of words
     // Map over each word
@@ -99,7 +99,7 @@ describe("5. About Higher Order Functions", function () {
     expect(jadenCase("How can mirrors be real if our eyes aren't real")).toEqual("How Can Mirrors Be Real If Our Eyes Aren't Real");
   });
 
-  it("can write your own filter function using a for loop", function() {
+  it("can write your own filter function using a for loop", () => {
     const myFilter = function(arr, func){
       for(let i =0; i < arr.length; i++) {
         let arrayItem = arr[i];
@@ -110,7 +110,7 @@ describe("5. About Higher Order Functions", function () {
     expect(myFilter([1,2,3], (i) => i > 2)).toEqual([3]);
   });
 
-  it("can write your own map function using forEach", function() {
+  it("can write your own map function using forEach", () => {
     const myMap = function(arr, func){
       arr.forEach(function(arrayItem) {
         return FILL_ME_IN;

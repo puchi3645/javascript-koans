@@ -1,8 +1,8 @@
-describe("7. About Applying What We Have Learnt", function() {
+describe("7. About Applying What We Have Learnt", () => {
 
   let products;
 
-  beforeEach(function () {
+  beforeEach(() => {
     products = [
       { name: "Sonoma", ingredients: ["artichoke", "sundried tomatoes", "mushrooms"], containsNuts: false },
       { name: "Pizza Primavera", ingredients: ["roma", "sundried tomatoes", "goats cheese", "rosemary"], containsNuts: false },
@@ -14,7 +14,7 @@ describe("7. About Applying What We Have Learnt", function() {
 
   /*********************************************************************************/
 
-  it("given I'm allergic to nuts and hate mushrooms, it should find a pizza I can eat (imperative)", function () {
+  it("given I'm allergic to nuts and hate mushrooms, it should find a pizza I can eat (imperative)", () => {
 
     let i,j,hasMushrooms, productsICanEat = [];
 
@@ -33,7 +33,7 @@ describe("7. About Applying What We Have Learnt", function() {
     expect(productsICanEat.length).toBe(FILL_ME_IN);
   });
 
-  it("given I'm allergic to nuts and hate mushrooms, it should find a pizza I can eat (functional)", function () {
+  it("given I'm allergic to nuts and hate mushrooms, it should find a pizza I can eat (functional)", () => {
 
     let productsICanEat = [];
 
@@ -44,25 +44,26 @@ describe("7. About Applying What We Have Learnt", function() {
   /*********************************************************************************/
 
   // EXTRA CHALLENGES
-  it("should find the largest palindrome made from the product of two 3 digit numbers", function () {
+  it("should find the largest palindrome made from the product of two 3 digit numbers", () => {
     const isPalidrome = function(item) {
       // a palindrome is a string that is the same forwards and backwards
       return FILL_ME_IN;
     };
 
-    const largestPalidrome = function() {
+    const largestPalidrome = () => {
       let listOfAllThreeDigitNumbers = [FILL_ME_IN];
       return FILL_ME_IN;
-    }();
-
+    };
+    largestPalidrome();
+    
     expect(largestPalidrome()).toBe(906609);
   });
 
-  it("should find the smallest number divisible by each of the numbers 1 to 20", function () {
+  it("should find the smallest number divisible by each of the numbers 1 to 20", () => {
 
   });
 
-  it("should find the 10001st prime", function () {
+  it("should find the 10001st prime", () => {
 
   });
 });

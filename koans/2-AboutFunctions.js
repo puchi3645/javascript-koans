@@ -1,22 +1,20 @@
-describe("2. About Functions", function() {
-
-  it("should declare functions", function() {
-
-    function add(a, b) {
+describe("2. About Functions", () => {
+  it("should declare functions", () => {
+    const add = (a, b) => {
       return a + b;
     }
 
     expect(add(1, 2)).toBe(FILL_ME_IN);
   });
 
-  it("should know internal variables override outer variables", function () {
+  it("should know internal variables override outer variables", () => {
     const message = "Outer";
 
-    function getMessage() {
+    const getMessage = () => {
       return message;
     }
 
-    function overrideMessage() {
+    const overrideMessage = () => {
       const message = "Inner";
       return message;
     }
@@ -26,11 +24,11 @@ describe("2. About Functions", function() {
     expect(message).toBe(FILL_ME_IN);
   });
 
-  it("should have lexical scoping", function () {
+  it("should have lexical scoping", () => {
     const variable = "top-level";
-    function parentfunction() {
+    const parentfunction = () => {
       const variable = "local";
-      function childfunction() {
+      const childfunction = () => {
         return variable;
       }
       return childfunction();
@@ -38,9 +36,8 @@ describe("2. About Functions", function() {
     expect(parentfunction()).toBe(FILL_ME_IN);
   });
 
-  it("should use lexical scoping to synthesise functions", function () {
-    function makeMysteryFunction(makerValue)
-    {
+  it("should use lexical scoping to synthesise functions", () => {
+    makeMysteryFunction = makerValue => {
       const newFunction = function doMysteriousThing(param)
       {
         return makerValue + param;
@@ -54,20 +51,20 @@ describe("2. About Functions", function() {
     expect(mysteryFunction3(10) + mysteryFunction5(5)).toBe(FILL_ME_IN);
   });
 
-  it("should allow extra function arguments", function () {
-    function returnFirstArg(firstArg) {
+  it("should allow extra function arguments", () => {
+    const returnFirstArg = firstArg => {
       return firstArg;
     }
 
     expect(returnFirstArg("first", "second", "third")).toBe(FILL_ME_IN);
 
-    function returnSecondArg(firstArg, secondArg) {
+    const returnSecondArg = (firstArg, secondArg) => {
       return secondArg;
     }
 
     expect(returnSecondArg("only give first arg")).toBe(FILL_ME_IN);
 
-    function returnAllArgs() {
+    const returnAllArgs = () => {
       let argsArray = [];
       for (let i = 0; i < arguments.length; i += 1) {
         argsArray.push(arguments[i]);
@@ -78,20 +75,20 @@ describe("2. About Functions", function() {
     expect(returnAllArgs("first", "second", "third")).toBe(FILL_ME_IN);
   });
 
-  it("should return undefined if no return value is specified", function () {
-    function returnsUndefined() {
+  it("should return undefined if no return value is specified", () => {
+    const returnsUndefined = () => {
 
     }
 
     expect(returnsUndefined()).toBe(FILL_ME_IN);
   });
 
-  it("should pass functions as values", function () {
-    const appendRules = function (name) {
+  it("should pass functions as values", () => {
+    const appendRules = name => {
       return name + " rules!";
     };
 
-    const appendDoubleRules = function (name) {
+    const appendDoubleRules = name => {
       return name + " totally rules!";
     };
 
@@ -102,10 +99,10 @@ describe("2. About Functions", function() {
     expect(praiseSinger.givePraise("Mary")).toBe(FILL_ME_IN);
   });
 
-  it("can use a function that returns a function", function(){
-    const myFunc = function (){
+  it("can use a function that returns a function", () =>{
+    const myFunc = () =>{
       let count = 0;
-      return function () {
+      return () => {
         return count + 1;
       };
     };
@@ -114,10 +111,10 @@ describe("2. About Functions", function() {
     expect( typeof myFunc() ).toEqual(FILL_ME_IN);
   });
 
-  it("can use functions and closures", function(){
-    const myFunc = function (){
+  it("can use functions and closures", () =>{
+    const myFunc = () =>{
       let count = 0;
-      return function () {
+      return () => {
         count = count + 1;
         return count;
       };

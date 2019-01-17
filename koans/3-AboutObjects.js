@@ -1,24 +1,24 @@
-describe("3. About Objects", function () {
+describe("3. About Objects", () => {
 
-  describe("Properties", function () {
+  describe("Properties", () => {
     let megalomaniac;
 
-    beforeEach(function () {
+    beforeEach(() => {
       megalomaniac = {  mastermind: "Joker", henchwoman: "Harley" };
     });
 
-    it("should confirm objects are collections of properties", function () {
+    it("should confirm objects are collections of properties", () => {
       expect(megalomaniac.mastermind).toBe(FILL_ME_IN);
     });
 
-    it("should confirm that properties are case sensitive", function () {
+    it("should confirm that properties are case sensitive", () => {
       expect(megalomaniac.henchwoman).toBe(FILL_ME_IN);
       expect(megalomaniac.henchWoman).toBe(FILL_ME_IN);
     });
   });
 
 
-  it("should know properties that are functions act like methods", function () {
+  it("should know properties that are functions act like methods", () => {
     const megalomaniac = {
       mastermind : "Brain",
       henchman: "Pinky",
@@ -32,14 +32,14 @@ describe("3. About Objects", function () {
     expect(FILL_ME_IN).toMatch(battleCry);
   });
 
-  it("should confirm that when a function is attached to an object, 'this' refers to the object", function () {
+  it("should confirm that when a function is attached to an object, 'this' refers to the object", () => {
     const currentDate = new Date();
     const currentYear = (currentDate.getFullYear());
     const megalomaniac = {
       mastermind: "James Wood",
       henchman: "Adam West",
       birthYear: 1970,
-      calculateAge: function () {
+      calculateAge: () => {
         return currentYear - this.birthYear;
       }
     };
@@ -48,7 +48,7 @@ describe("3. About Objects", function () {
     expect(megalomaniac.calculateAge()).toBe(FILL_ME_IN);
   });
 
-  it("should know that properties can be added and deleted", function () {
+  it("should know that properties can be added and deleted", () => {
     const megalomaniac = { mastermind : "Agent Smith", henchman: "Agent Smith" };
 
     expect(megalomaniac["secretary"]).toBe(FILL_ME_IN);
@@ -61,7 +61,7 @@ describe("3. About Objects", function () {
   });
 
 
-  it("should use prototype to add to all objects", function () {
+  it("should use prototype to add to all objects", () => {
     function Circle(radius){
       this.radius = radius;
     }
@@ -73,7 +73,7 @@ describe("3. About Objects", function () {
     expect(simpleCircle.colour).toBe(FILL_ME_IN);
     expect(colouredCircle.colour).toBe(FILL_ME_IN);
 
-    Circle.prototype.describe = function () {
+    Circle.prototype.describe = () => {
       return "This circle has a radius of: " + this.radius;
     };
 
@@ -81,7 +81,7 @@ describe("3. About Objects", function () {
     expect(colouredCircle.describe()).toBe(FILL_ME_IN);
   });
 
-  it("should create your own simple object", function() {
+  it("should create your own simple object", () => {
     const myNewObject = FILL_ME_IN;
 
     expect(myNewObject.prop1).toEqual("a property!");
@@ -89,7 +89,7 @@ describe("3. About Objects", function () {
     expect(myNewObject.prop3()).toEqual("a property that is a method!");
   });
 
-  it("should create your own prototype", function() {
+  it("should create your own prototype", () => {
     function MyPrototype(argument) {
       return FILL_ME_IN;
     }
