@@ -1,8 +1,8 @@
 describe("5. About Higher Order Functions", function () {
 
   it("should use filter to return array items that meet a criteria", function () {
-    var numbers = [1,2,3];
-    var odd = numbers.filter(function (x) { return x % 2 !== 0 });
+    const numbers = [1,2,3];
+    const odd = numbers.filter(function (x) { return x % 2 !== 0 });
 
     expect(odd).toEqual(FILL_ME_IN);
     expect(odd.length).toBe(FILL_ME_IN);
@@ -10,17 +10,17 @@ describe("5. About Higher Order Functions", function () {
   });
 
   it("should use 'map' to transform each element", function () {
-    var numbers = [1, 2, 3];
-    var numbersPlus1 = numbers.map(function(x) { return x + 1 });
+    const numbers = [1, 2, 3];
+    const numbersPlus1 = numbers.map(function(x) { return x + 1 });
 
     expect(numbersPlus1).toEqual(FILL_ME_IN);
     expect(numbers).toEqual(FILL_ME_IN);
   });
 
   it("should use 'forEach' for simple iteration", function () {
-    var numbers = [1,2,3];
-    var msg = "";
-    var isEven = function (item) {
+    const numbers = [1,2,3];
+    let msg = "";
+    const isEven = function (item) {
       msg += (item % 2) === 0;
     };
 
@@ -31,20 +31,20 @@ describe("5. About Higher Order Functions", function () {
   });
 
   it("should use 'all' to test whether all items pass condition", function () {
-    var onlyEven = [2,4,6];
-    var mixedBag = [2,4,5,6];
+    const onlyEven = [2,4,6];
+    const mixedBag = [2,4,5,6];
 
-    var isEven = function(x) { return x % 2 === 0 };
+    const isEven = function(x) { return x % 2 === 0 };
 
     expect(onlyEven.every(isEven)).toBe(FILL_ME_IN);
     expect(mixedBag.every(isEven)).toBe(FILL_ME_IN);
   });
 
   it("should use 'any' to test if any items passes condition" , function () {
-    var onlyEven = [2,4,6];
-    var mixedBag = [2,4,5,6];
+    const onlyEven = [2,4,6];
+    const mixedBag = [2,4,5,6];
 
-    var isEven = function(x) { return x % 2 === 0 };
+    const isEven = function(x) { return x % 2 === 0 };
 
     expect(onlyEven.some(isEven)).toBe(FILL_ME_IN);
     expect(mixedBag.some(isEven)).toBe(FILL_ME_IN);
@@ -52,8 +52,8 @@ describe("5. About Higher Order Functions", function () {
 
   it("should write a function to filter out objects that match a criteria", function () {
     // return a filer people over 40
-    var people = [{name: "bob", age: 41}, {name: "jane", age: 22},{name: "janet", age: 47},{name: "louis", age: 35}];
-    var peopleOverFourty = people.filter(function (x) {
+    const people = [{name: "bob", age: 41}, {name: "jane", age: 22},{name: "janet", age: 47},{name: "louis", age: 35}];
+    const peopleOverFourty = people.filter(function (x) {
       return FILL_ME_IN;
     });
 
@@ -62,8 +62,8 @@ describe("5. About Higher Order Functions", function () {
 
   it("should write a function to transform elements in an array into a new array", function () {
     // return a list of everyone's age
-    var people = [{name: "bob", age: 41}, {name: "jane", age: 22},{name: "janet", age: 47},{name: "louis", age: 35}];
-    var names = people.map(function(x) {
+    const people = [{name: "bob", age: 41}, {name: "jane", age: 22},{name: "janet", age: 47},{name: "louis", age: 35}];
+    const names = people.map(function(x) {
       return FILL_ME_IN;
     });
 
@@ -76,7 +76,7 @@ describe("5. About Higher Order Functions", function () {
     // arrayDiff([1,2],[1]) == [2]
     // arrayDiff([1,2,2,2,3],[2]) == [1,3]
 
-    var arrayDiff = function(array1, array2) {
+    const arrayDiff = function(array1, array2) {
       return array1.filter(function(){
         return FILL_ME_IN;
       });
@@ -92,7 +92,7 @@ describe("5. About Higher Order Functions", function () {
     // Map over each word
     // turn the array back into a string
 
-    var jadenCase = function(string){
+    const jadenCase = function(string){
       return FILL_ME_IN;
     };
 
@@ -100,9 +100,9 @@ describe("5. About Higher Order Functions", function () {
   });
 
   it("can write your own filter function using a for loop", function() {
-    var myFilter = function(arr, func){
-      for(var i =0; i < arr.length; i++) {
-        var arrayItem = arr[i];
+    const myFilter = function(arr, func){
+      for(let i =0; i < arr.length; i++) {
+        let arrayItem = arr[i];
         return FILL_ME_IN;
       }
     };
@@ -111,7 +111,7 @@ describe("5. About Higher Order Functions", function () {
   });
 
   it("can write your own map function using forEach", function() {
-    var myMap = function(arr, func){
+    const myMap = function(arr, func){
       arr.forEach(function(arrayItem) {
         return FILL_ME_IN;
       });

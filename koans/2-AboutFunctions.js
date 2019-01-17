@@ -10,14 +10,14 @@ describe("2. About Functions", function() {
   });
 
   it("should know internal variables override outer variables", function () {
-    var message = "Outer";
+    const message = "Outer";
 
     function getMessage() {
       return message;
     }
 
     function overrideMessage() {
-      var message = "Inner";
+      const message = "Inner";
       return message;
     }
 
@@ -27,9 +27,9 @@ describe("2. About Functions", function() {
   });
 
   it("should have lexical scoping", function () {
-    var variable = "top-level";
+    const variable = "top-level";
     function parentfunction() {
-      var variable = "local";
+      const variable = "local";
       function childfunction() {
         return variable;
       }
@@ -41,15 +41,15 @@ describe("2. About Functions", function() {
   it("should use lexical scoping to synthesise functions", function () {
     function makeMysteryFunction(makerValue)
     {
-      var newFunction = function doMysteriousThing(param)
+      const newFunction = function doMysteriousThing(param)
       {
         return makerValue + param;
       };
       return newFunction;
     }
 
-    var mysteryFunction3 = makeMysteryFunction(3);
-    var mysteryFunction5 = makeMysteryFunction(5);
+    const mysteryFunction3 = makeMysteryFunction(3);
+    const mysteryFunction5 = makeMysteryFunction(5);
 
     expect(mysteryFunction3(10) + mysteryFunction5(5)).toBe(FILL_ME_IN);
   });
@@ -68,8 +68,8 @@ describe("2. About Functions", function() {
     expect(returnSecondArg("only give first arg")).toBe(FILL_ME_IN);
 
     function returnAllArgs() {
-      var argsArray = [];
-      for (var i = 0; i < arguments.length; i += 1) {
+      let argsArray = [];
+      for (let i = 0; i < arguments.length; i += 1) {
         argsArray.push(arguments[i]);
       }
       return argsArray.join(",");
@@ -87,15 +87,15 @@ describe("2. About Functions", function() {
   });
 
   it("should pass functions as values", function () {
-    var appendRules = function (name) {
+    const appendRules = function (name) {
       return name + " rules!";
     };
 
-    var appendDoubleRules = function (name) {
+    const appendDoubleRules = function (name) {
       return name + " totally rules!";
     };
 
-    var praiseSinger = { givePraise: appendRules };
+    const praiseSinger = { givePraise: appendRules };
     expect(praiseSinger.givePraise("John")).toBe(FILL_ME_IN);
 
     praiseSinger.givePraise = appendDoubleRules;
@@ -103,8 +103,8 @@ describe("2. About Functions", function() {
   });
 
   it("can use a function that returns a function", function(){
-    var myFunc = function (){
-      var count = 0;
+    const myFunc = function (){
+      let count = 0;
       return function () {
         return count + 1;
       };
@@ -115,15 +115,15 @@ describe("2. About Functions", function() {
   });
 
   it("can use functions and closures", function(){
-    var myFunc = function (){
-      var count = 0;
+    const myFunc = function (){
+      let count = 0;
       return function () {
         count = count + 1;
         return count;
       };
     };
 
-    var closure = myFunc();
+    const closure = myFunc();
     expect(closure()).toEqual(FILL_ME_IN);
     expect(closure()).toEqual(FILL_ME_IN);
   });

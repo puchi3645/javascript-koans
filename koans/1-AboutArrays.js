@@ -2,10 +2,10 @@ describe("1. About Arrays", function() {
 
   //We shall contemplate truth by testing reality, via spec expectations.
   it("should create arrays", function() {
-    var emptyArray = [];
+    const emptyArray = [];
     expect(emptyArray.length).toBe(FILL_ME_IN);
 
-    var multiTypeArray = [0, 1, "two", function () { return 3; }, {value1: 4, value2: 5}, [6, 7]];
+    const multiTypeArray = [0, 1, "two", function () { return 3; }, {value1: 4, value2: 5}, [6, 7]];
     expect(multiTypeArray[0]).toBe(FILL_ME_IN);
     expect(multiTypeArray[2]).toBe(FILL_ME_IN);
     expect(multiTypeArray[3]()).toBe(FILL_ME_IN);
@@ -15,7 +15,7 @@ describe("1. About Arrays", function() {
   });
 
   it("should understand array literals", function () {
-    var array = [];
+    let array = [];
     expect(array).toEqual([]);
 
     array[0] = 1;
@@ -29,13 +29,13 @@ describe("1. About Arrays", function() {
   });
 
   it("should understand array length", function () {
-    var fourNumberArray = [1, 2, 3, 4];
+    const fourNumberArray = [1, 2, 3, 4];
 
     expect(fourNumberArray.length).toBe(FILL_ME_IN);
     fourNumberArray.push(5, 6);
     expect(fourNumberArray.length).toBe(FILL_ME_IN);
 
-    var tenEmptyElementArray = new Array(10);
+    const tenEmptyElementArray = new Array(10);
     expect(tenEmptyElementArray.length).toBe(FILL_ME_IN);
     expect(tenEmptyElementArray).toEqual([undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined]);
 
@@ -45,7 +45,7 @@ describe("1. About Arrays", function() {
   });
 
   it("should slice arrays", function () {
-    var array = ["peanut", "butter", "and", "jelly"];
+    const array = ["peanut", "butter", "and", "jelly"];
 
     expect(array.slice(0, 1)).toEqual(FILL_ME_IN);
     expect(array.slice(0, 2)).toEqual(FILL_ME_IN);
@@ -57,10 +57,8 @@ describe("1. About Arrays", function() {
   });
 
   // For more information: https://www.youtube.com/watch?v=YnfwDQ5XYF4
-  // Note that the video uses `let` and `const`.
-  // For now, just think of those as doing the same job as `var`
   it("should know array references", function () {
-    var array = [ "zero", "one", "two", "three", "four", "five" ];
+    let array = [ "zero", "one", "two", "three", "four", "five" ];
 
     function passedByReference(refArray) {
       refArray[1] = "changed in function";
@@ -68,44 +66,44 @@ describe("1. About Arrays", function() {
     passedByReference(array);
     expect(array[1]).toBe(FILL_ME_IN);
 
-    var assignedArray = array;
+    let assignedArray = array;
     assignedArray[5] = "changed in assignedArray";
     expect(array[5]).toBe(FILL_ME_IN);
 
-    var copyOfArray = array.slice();
+    let copyOfArray = array.slice();
     copyOfArray[3] = "changed in copyOfArray";
     expect(array[3]).toBe(FILL_ME_IN);
   });
 
   it("should push and pop", function () {
-    var array = [1, 2];
+    let array = [1, 2];
     array.push(3);
 
     expect(array).toEqual(FILL_ME_IN);
 
-    var poppedValue = array.pop();
+    const poppedValue = array.pop();
     expect(poppedValue).toBe(FILL_ME_IN);
     expect(array).toEqual(FILL_ME_IN);
   });
 
   it("should know about shifting arrays", function () {
-    var array = [1, 2];
+    let array = [1, 2];
 
     array.unshift(3);
     expect(array).toEqual(FILL_ME_IN);
 
-    var shiftedValue = array.shift();
+    const shiftedValue = array.shift();
     expect(shiftedValue).toEqual(FILL_ME_IN);
     expect(array).toEqual(FILL_ME_IN);
   });
 
   it("should write a function that returns an array of the first two elements of that array", function () {
     // be sure the function does not modify the original array
-    var firstTwoElements = function(array) {
+    const firstTwoElements = array => {
       return FILL_ME_IN;
     };
-    var firstArray = [1,2,3];
-    var secondArray = [7,6,5];
+    const firstArray = [1,2,3];
+    const secondArray = [7,6,5];
 
     expect(firstTwoElements(firstArray)).toEqual([1,2]);
     expect(firstArray).toEqual([1,2,3]);
@@ -115,7 +113,7 @@ describe("1. About Arrays", function() {
 
 
   it("should write a function that returns the 3rd element in an array (or null)", function () {
-    var thirdElement = function(array) {
+    const thirdElement = array => {
       return FILL_ME_IN;
     };
 
@@ -128,7 +126,7 @@ describe("1. About Arrays", function() {
     //The length of that array is determined by the second parameter;
     //The elements of that array should be the first parameter
     //This could be done using a for loop or the fill array function
-    var makeArray = function(element, length) {
+    const makeArray = (element, length) => {
       return FILL_ME_IN;
     };
 

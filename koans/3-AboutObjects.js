@@ -1,7 +1,7 @@
 describe("3. About Objects", function () {
 
   describe("Properties", function () {
-    var megalomaniac;
+    let megalomaniac;
 
     beforeEach(function () {
       megalomaniac = {  mastermind: "Joker", henchwoman: "Harley" };
@@ -19,7 +19,7 @@ describe("3. About Objects", function () {
 
 
   it("should know properties that are functions act like methods", function () {
-    var megalomaniac = {
+    const megalomaniac = {
       mastermind : "Brain",
       henchman: "Pinky",
       battleCry: function (noOfBrains) {
@@ -28,14 +28,14 @@ describe("3. About Objects", function () {
       }
     };
 
-    var battleCry = megalomaniac.battleCry(4);
+    const battleCry = megalomaniac.battleCry(4);
     expect(FILL_ME_IN).toMatch(battleCry);
   });
 
   it("should confirm that when a function is attached to an object, 'this' refers to the object", function () {
-    var currentDate = new Date();
-    var currentYear = (currentDate.getFullYear());
-    var megalomaniac = {
+    const currentDate = new Date();
+    const currentYear = (currentDate.getFullYear());
+    const megalomaniac = {
       mastermind: "James Wood",
       henchman: "Adam West",
       birthYear: 1970,
@@ -49,7 +49,7 @@ describe("3. About Objects", function () {
   });
 
   it("should know that properties can be added and deleted", function () {
-    var megalomaniac = { mastermind : "Agent Smith", henchman: "Agent Smith" };
+    const megalomaniac = { mastermind : "Agent Smith", henchman: "Agent Smith" };
 
     expect(megalomaniac["secretary"]).toBe(FILL_ME_IN);
 
@@ -66,8 +66,8 @@ describe("3. About Objects", function () {
       this.radius = radius;
     }
 
-    var simpleCircle = new Circle(10);
-    var colouredCircle = new Circle(5);
+    const simpleCircle = new Circle(10);
+    let colouredCircle = new Circle(5);
     colouredCircle.colour = "red";
 
     expect(simpleCircle.colour).toBe(FILL_ME_IN);
@@ -82,7 +82,7 @@ describe("3. About Objects", function () {
   });
 
   it("should create your own simple object", function() {
-    var myNewObject = FILL_ME_IN;
+    const myNewObject = FILL_ME_IN;
 
     expect(myNewObject.prop1).toEqual("a property!");
     expect(myNewObject.prop2).toEqual([4,3,2]);
@@ -93,7 +93,7 @@ describe("3. About Objects", function () {
     function MyPrototype(argument) {
       return FILL_ME_IN;
     }
-    var myNewObject = new MyPrototype("initial value");
+    const myNewObject = new MyPrototype("initial value");
 
     expect(myNewObject.prop1).toEqual({simple: "object"});
     expect(myNewObject.prop2).toEqual("initial value");

@@ -1,6 +1,6 @@
 describe("7. About Applying What We Have Learnt", function() {
 
-  var products;
+  let products;
 
   beforeEach(function () {
     products = [
@@ -16,7 +16,7 @@ describe("7. About Applying What We Have Learnt", function() {
 
   it("given I'm allergic to nuts and hate mushrooms, it should find a pizza I can eat (imperative)", function () {
 
-    var i,j,hasMushrooms, productsICanEat = [];
+    let i,j,hasMushrooms, productsICanEat = [];
 
     for (i = 0; i < products.length; i+=1) {
       if (products[i].containsNuts === false) {
@@ -35,7 +35,7 @@ describe("7. About Applying What We Have Learnt", function() {
 
   it("given I'm allergic to nuts and hate mushrooms, it should find a pizza I can eat (functional)", function () {
 
-    var productsICanEat = [];
+    let productsICanEat = [];
 
     /* solve using filter() & some() / every() */
 
@@ -45,13 +45,13 @@ describe("7. About Applying What We Have Learnt", function() {
 
   // EXTRA CHALLENGES
   it("should find the largest palindrome made from the product of two 3 digit numbers", function () {
-    var isPalidrome = function(item) {
+    const isPalidrome = function(item) {
       // a palindrome is a string that is the same forwards and backwards
       return FILL_ME_IN;
     };
 
-    var largestPalidrome = function() {
-      var listOfAllThreeDigitNumbers = [FILL_ME_IN];
+    const largestPalidrome = function() {
+      let listOfAllThreeDigitNumbers = [FILL_ME_IN];
       return FILL_ME_IN;
     }();
 
