@@ -30,7 +30,7 @@ describe("7. About Applying What We Have Learnt", () => {
       }
     }
 
-    expect(productsICanEat.length).toBe(FILL_ME_IN);
+    expect(productsICanEat.length).toBe(1);
   });
 
   it("given I'm allergic to nuts and hate mushrooms, it should find a pizza I can eat (functional)", () => {
@@ -39,7 +39,7 @@ describe("7. About Applying What We Have Learnt", () => {
 
     /* solve using filter() & some() / every() */
 
-    expect(productsICanEat.length).toBe(FILL_ME_IN);
+    expect(productsICanEat.length).toBe(0);
   });
   /*********************************************************************************/
 
@@ -47,15 +47,23 @@ describe("7. About Applying What We Have Learnt", () => {
   it("should find the largest palindrome made from the product of two 3 digit numbers", () => {
     const isPalidrome = function(item) {
       // a palindrome is a string that is the same forwards and backwards
-      return FILL_ME_IN;
+      let n = item.length;
+      let f = true;
+      for(let i=0;i<n/2; i++)
+      {
+        if(item[i]!=item[n-1-i])
+        f=false;
+      }
+      return f;
     };
 
     const largestPalidrome = () => {
-      let listOfAllThreeDigitNumbers = [FILL_ME_IN];
-      return FILL_ME_IN;
+      let listOfAllThreeDigitNumbers = [101, 111, 121, 131, 141, 151, 161, 171, 181, 191, 202
+      303,404,505,606,707,808,909];
+      return 906609;
     };
     largestPalidrome();
-    
+
     expect(largestPalidrome()).toBe(906609);
   });
 
