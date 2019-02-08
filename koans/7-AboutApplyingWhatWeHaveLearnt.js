@@ -45,25 +45,81 @@ describe("7. About Applying What We Have Learnt", () => {
 
   // EXTRA CHALLENGES
   it("should find the largest palindrome made from the product of two 3 digit numbers", () => {
-    const isPalidrome = function(item) {
-      // a palindrome is a string that is the same forwards and backwards
-      let n = item.length;
-      let f = true;
-      for(let i=0;i<n/2; i++)
-      {
-        if(item[i]!=item[n-1-i])
-        f=false;
-      }
-      return f;
-    };
+    function largestPalindrome(){
 
-    const largestPalidrome = () => {
-      let listOfAllThreeDigitNumbers = [101, 111, 121, 131, 141, 151, 161, 171, 181, 191, 202,303,404,505,606,707,808,909];
-      return 906609;
-    };
-    largestPalidrome();
+        var arr = [];
+        for(var i =999; i>100; i--){
+            for(var j = 999; j>100; j--){
+                var mul = j*i;
+                if(isPalindrome(mul)){
+                    arr.push(j * i);
+                }
+            }
+        }
 
-    expect(largestPalidrome()).toBe(906609);
+        return Math.max.apply(Math, arr);
+    }
+
+  const isPalindrome =  function(i){
+        return i.toString() == i.toString().split("").reverse().join("");
+    }
+
+
+    // const isPalidrome = function(item) {
+    //   // a palindrome is a string that is the same forwards and backwards
+    //   // let n = item.length;
+    //   // let f = true;
+    //   // for(let i=0;i<n/2; i++)
+    //   // for(let k=n;k<n/2;k--)
+    //   // {
+    //   //   if(item[i]!=item[k])
+    //   //   f=false;
+    //   // }
+    //   // return f;
+    //
+    //  var len = item.length;
+    //  for (var i = 0; i < len/2; i++) {
+    //    if (item[i] !== item[len - 1 - i]) {
+    //        return false;
+    //    }
+    //  }
+    //  return true;
+    // };
+
+    // const largestPalidrome = () => {
+    //   let listOfAllThreeDigitNumbers = [
+    //     101, 111, 121, 131, 141, 151, 161, 171, 181, 191,
+    //     202, 212,222,232,242,252,262,272,282,292,
+    //     303, 313,323,333,343,353,363,373,383,393,
+    //     404, 414,424,434,444,454,464,474,484,494,
+    //     505,515,525,535,545,555,565,575,585,595,
+    //     606,616,626,636,646,656,666,676,686,696,
+    //     707,717,727,737,747,757,767,777,787,797,
+    //     808,818,828,838,848,858,868,878,888,898,
+    //     909,919,929,939,949,959,969,979,989,999];
+    //   let list3 = listOfAllThreeDigitNumbers;
+    //   let list3length = list3.length;
+    //   let prodList = [];
+    //   for(let i=0;i<list3length;i++)
+    //   for(let j=i+1;j<list3length;j++)
+    //   {
+    //     //console.log(list3[i],list3[j]);
+    //     prodList.push(list3[i]*list3[j]);
+    //   }
+    //   console.log(prodList);
+    //
+    //   let palindromeProd = prodList.map(x => isPalidrome(x));
+    //   console.log(palindromeProd);
+    //   let mx = 0;
+    //   for(item in prodList)
+    //   {
+    //     mx = item>mx?item:mx;
+    //   }
+    //   return mx;
+    // };
+    largestPalindrome();
+
+    expect(largestPalindrome()).toBe(906609);
   });
 
   it("should find the smallest number divisible by each of the numbers 1 to 20", () => {
