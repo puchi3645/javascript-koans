@@ -82,7 +82,7 @@ describe("3. About Objects", () => {
   });
 
   it("should create your own simple object", () => {
-    const myNewObject = {"prop1":"a property!","prop2":[4,3,2],"prop3()":{return "a property that is a method!"}};
+    const myNewObject = {"prop1":"a property!","prop2":[4,3,2],"prop3":()=>"a property that is a method!"};
 
     expect(myNewObject.prop1).toEqual("a property!");
     expect(myNewObject.prop2).toEqual([4,3,2]);

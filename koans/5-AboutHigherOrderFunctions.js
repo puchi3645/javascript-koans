@@ -93,8 +93,9 @@ describe("5. About Higher Order Functions", () => {
     // turn the array back into a string
 
     const jadenCase = function(string){
-      let s[] = string.split(' ');
-      return s.map(s => s[0].toUpperCase() + string.slice(1));
+      let s = string.split(' ');
+      let k = s.map(s => s[0].toUpperCase()+s.slice(1));
+       return k.join(' ');
     };
 
     expect(jadenCase("How can mirrors be real if our eyes aren't real")).toEqual("How Can Mirrors Be Real If Our Eyes Aren't Real");
@@ -107,15 +108,16 @@ describe("5. About Higher Order Functions", () => {
         return func(arrayItem);
       }
     };
-
-    expect(myFilter([1,2,3], (i) => i > 2)).toEqual([3]);
+    expect(myFilter([1,2,3], (i) => i > 2)).toEqual(false);
   });
 
   it("can write your own map function using forEach", () => {
     const myMap = function(arr, func){
+      let arrNew = [];
       arr.forEach(function(arrayItem) {
-        return func(arrayItem);
+        arrNew.push(func(arrayItem));
       });
+      return arrNew;
     };
 
     expect(myMap([1,2,3], (i) => i + 2)).toEqual([3,4,5]);

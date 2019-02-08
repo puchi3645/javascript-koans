@@ -108,7 +108,7 @@ describe("2. About Functions", () => {
     };
 
     expect(myFunc()()).toEqual(1);
-    expect( typeof myFunc() ).toEqual(function);
+    expect( typeof myFunc() ).toEqual('function');
   });
 
   it("can use functions and closures", () =>{
@@ -122,6 +122,6 @@ describe("2. About Functions", () => {
 
     const closure = myFunc();
     expect(closure()).toEqual(1);
-    expect(closure()).toEqual(1);
+    expect(closure()).toEqual(2);
   });
 });

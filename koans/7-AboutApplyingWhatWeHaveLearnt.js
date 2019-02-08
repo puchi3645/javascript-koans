@@ -58,8 +58,7 @@ describe("7. About Applying What We Have Learnt", () => {
     };
 
     const largestPalidrome = () => {
-      let listOfAllThreeDigitNumbers = [101, 111, 121, 131, 141, 151, 161, 171, 181, 191, 202
-      303,404,505,606,707,808,909];
+      let listOfAllThreeDigitNumbers = [101, 111, 121, 131, 141, 151, 161, 171, 181, 191, 202,303,404,505,606,707,808,909];
       return 906609;
     };
     largestPalidrome();
